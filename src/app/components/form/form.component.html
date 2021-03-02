@@ -1,0 +1,34 @@
+<div>
+    <form (ngSubmit)="onSubmit()" #form="ngForm">
+        <fieldset>
+
+            <legend>Form Validation</legend>
+            <label for="name">Name</label> <br>
+            <input [disabled]="sent" ngModel required type="text" name="name" #inputName="ngModel" [ngClass]="{'error-input': inputName.invalid && inputName.touched}"/> <br>
+            <p class="error-msg" *ngIf="inputName.invalid && inputName.touched">Name is required</p>
+
+            <label for="occupation">Occupation</label> <br>
+            <input [disabled]="sent" ngModel type="text" name="occupation"/> <br>
+
+
+            <label for="email">Email</label> <br>
+            <input [disabled]="sent" ngModel required email type="email" name="email" #inputEmail="ngModel" /> <br>
+            <p class="error-msg" *ngIf="inputEmail.invalid && inputEmail.touched">Wrong email format</p>
+
+            <label for="subject">Subject</label> <br>
+            <input [disabled]="sent" ngModel required type="text" name="subject" #inputSubject="ngModel" /> <br>
+            <p class="error-msg" *ngIf="inputSubject.invalid && inputSubject.touched">Subject is required</p>
+
+            <label for="content">Content</label> <br>
+            <textarea [disabled]="sent" ngModel required minlength="10" maxlength="255" type="text" name="content" #inputContent="ngModel"></textarea> <br>
+            <p class="error-msg" *ngIf="inputContent.invalid && inputContent.touched">Content has to be between 10 and 255 characters</p>
+
+            <br><br>
+
+            <button type="submit" [disabled]="sent" [disabled]="form.invalid">Submit</button>
+        </fieldset>
+        
+  
+    </form>
+  
+  </div>
