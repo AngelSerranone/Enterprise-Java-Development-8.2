@@ -11,6 +11,8 @@ For this lab you'll build a simple contact form component that must meet the spe
    5. The email must be a valid email address.
    6. After successful submission, you must disable all inputs and disable the submit button (you can only send the contact form successfully once).
 
+![](./src/assets/images/captura1.png)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.1.
 
 ## Development server
